@@ -3,693 +3,880 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leena Agarwal — TPM Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>Leena Agarwal — Senior TPM Consulting | AI/ML, Human Data & MLOps</title>
+  <meta name="description" content="Senior Technical Program Manager consultant with 18+ years in AI/ML, Human Data pipelines, MLOps, and cloud infrastructure. San Francisco Bay Area." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #0e0e0e;
-      --bg: #faf8f4;
-      --gold: #b8860b;
-      --gold-light: #d4a017;
-      --muted: #6b6560;
-      --card: #f2ede4;
-      --border: #ddd8ce;
-      --white: #ffffff;
+      --navy:        #0a2463;
+      --blue:        #1d4ed8;
+      --blue-hover:  #1e40af;
+      --blue-light:  #dbeafe;
+      --blue-pale:   #eff6ff;
+      --white:       #ffffff;
+      --ink:         #0f172a;
+      --body:        #334155;
+      --muted:       #64748b;
+      --border:      #e2e8f0;
+      --surface:     #f8fafc;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--white);
       color: var(--ink);
-      font-size: 16px;
       line-height: 1.7;
       overflow-x: hidden;
+      font-size: 16px;
     }
 
-    /* ── NAV ── */
+    /* ─────────────────────────────
+       NAV
+    ───────────────────────────── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 4rem;
-      background: rgba(250,248,244,0.92);
-      backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,255,255,0.98);
       border-bottom: 1px solid var(--border);
-      animation: fadeDown 0.8s ease both;
+      box-shadow: 0 2px 16px rgba(10,36,99,0.06);
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--ink);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
       text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo em { font-style: normal; color: var(--blue); }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
     }
 
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links a {
+    .nav-menu a {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-menu a:hover { color: var(--blue); }
 
-    .nav-cta {
-      background: var(--ink);
+    .nav-btn {
+      background: var(--blue) !important;
       color: var(--white) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 2px;
+      padding: 0.48rem 1.3rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold); color: var(--white) !important; }
+    .nav-btn:hover { background: var(--navy) !important; }
 
-    /* ── HERO ── */
-    .hero {
+    /* ─────────────────────────────
+       HERO
+    ───────────────────────────── */
+    #home {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      padding: 0 4rem;
-      padding-top: 6rem;
       gap: 4rem;
-      position: relative;
-      overflow: hidden;
+      padding: 110px 6% 72px;
+      background: linear-gradient(140deg, var(--white) 55%, var(--blue-pale) 100%);
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(184,134,11,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-      animation: fadeUp 0.9s 0.2s ease both;
+      padding: 0.32rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 1.3rem;
     }
 
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      font-weight: 300;
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 1.6rem;
-      animation: fadeUp 0.9s 0.35s ease both;
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
     }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
+    .hero-title em { font-style: italic; color: var(--blue); }
 
     .hero-sub {
       font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 480px;
-      line-height: 1.75;
+      color: var(--body);
+      max-width: 500px;
+      line-height: 1.8;
       margin-bottom: 2.4rem;
-      font-weight: 300;
-      animation: fadeUp 0.9s 0.5s ease both;
+      font-weight: 400;
     }
 
-    .hero-actions {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-      animation: fadeUp 0.9s 0.65s ease both;
-    }
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 
-    .btn-primary {
+    .btn-solid {
       display: inline-block;
-      background: var(--ink);
+      background: var(--blue);
       color: var(--white);
-      padding: 0.85rem 2rem;
+      padding: 0.88rem 1.9rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border-radius: 2px;
-      transition: background 0.25s, transform 0.2s;
+      box-shadow: 0 4px 14px rgba(29,78,216,0.28);
+      transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
+    .btn-solid:hover { background: var(--navy); transform: translateY(-2px); }
 
-    .btn-secondary {
+    .btn-outline {
       display: inline-block;
-      border: 1px solid var(--border);
-      color: var(--ink);
-      padding: 0.85rem 2rem;
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      padding: 0.85rem 1.9rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border-radius: 2px;
-      transition: border-color 0.25s, color 0.25s;
+      transition: background 0.2s, color 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline:hover { background: var(--blue); color: var(--white); }
 
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      animation: fadeUp 0.9s 0.5s ease both;
-    }
+    /* Hero stat cards */
+    .hero-cards { display: flex; flex-direction: column; gap: 1rem; }
 
     .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.4rem 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(10,36,99,0.05);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .stat-card:hover { transform: translateX(6px); box-shadow: -3px 0 0 var(--gold); }
+    .stat-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 18px rgba(10,36,99,0.09);
+      border-left: 3px solid var(--blue);
+    }
 
     .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue);
       line-height: 1;
-      min-width: 70px;
+      min-width: 68px;
     }
 
-    .stat-label { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
-    .stat-label strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 0.1rem; }
+    .stat-text strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.1rem;
+    }
+    .stat-text span { font-size: 0.78rem; color: var(--muted); }
 
-    /* ── LOGOS ── */
+    /* ─────────────────────────────
+       LOGO STRIP
+    ───────────────────────────── */
     .logos {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 4rem;
+      background: var(--navy);
+      padding: 1.8rem 6%;
       text-align: center;
     }
-
-    .logos-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
+    .logos-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 1rem;
     }
-
-    .logos-grid {
+    .logos-row {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 3.5rem;
       flex-wrap: wrap;
+      gap: 2.8rem;
     }
-
-    .logo-item {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #aaa;
-      letter-spacing: 0.06em;
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: 0.05em;
       transition: color 0.2s;
     }
-    .logo-item:hover { color: var(--ink); }
+    .logo-name:hover { color: var(--white); }
 
-    /* ── SECTIONS ── */
-    section { padding: 6rem 4rem; }
+    /* ─────────────────────────────
+       SHARED SECTION STYLES
+    ───────────────────────────── */
+    .section { padding: 88px 6%; }
+    .section-alt { background: var(--blue-pale); }
+    .section-surface { background: var(--surface); }
 
-    .section-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
+    .eyebrow {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 0.8rem;
+      padding: 0.28rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.9rem;
     }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.85rem, 2.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
     }
 
     .section-sub {
       font-size: 1rem;
-      color: var(--muted);
+      color: var(--body);
       max-width: 560px;
-      line-height: 1.75;
-      font-weight: 300;
+      line-height: 1.8;
     }
 
-    /* ── SERVICES ── */
-    #services { background: var(--ink); color: var(--white); }
-    #services .section-title { color: var(--white); }
-    #services .section-sub { color: rgba(255,255,255,0.55); }
-    #services .section-eyebrow { color: var(--gold-light); }
+    .section-intro { margin-bottom: 3.5rem; }
 
-    .services-grid {
+    /* ─────────────────────────────
+       WHY HIRE A TPM CONSULTANT
+    ───────────────────────────── */
+    .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      margin-top: 3.5rem;
-      background: rgba(255,255,255,0.08);
+      gap: 1.4rem;
     }
 
-    .service-card {
-      background: var(--ink);
-      padding: 2.5rem;
-      transition: background 0.3s;
-      position: relative;
-      overflow: hidden;
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: box-shadow 0.25s, border-color 0.25s;
     }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 0;
-      background: var(--gold);
-      transition: height 0.4s ease;
+    .why-card:hover {
+      box-shadow: 0 8px 28px rgba(10,36,99,0.08);
+      border-color: var(--blue);
     }
-    .service-card:hover::before { height: 100%; }
-    .service-card:hover { background: #181818; }
 
-    .service-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
+    .why-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.9rem;
       display: block;
     }
 
-    .service-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.8rem;
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
     }
 
-    .service-desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.55);
+    .why-desc {
+      font-size: 0.86rem;
+      color: var(--body);
       line-height: 1.75;
     }
 
+    /* ─────────────────────────────
+       SERVICES
+    ───────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(10,36,99,0.09);
+      border-color: var(--blue);
+    }
+
+    .service-icon-box {
+      width: 46px; height: 46px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.86rem;
+      color: var(--body);
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+    }
+
     .service-list {
-      margin-top: 1rem;
       list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
     }
     .service-list li {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
-      padding: 0.25rem 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.81rem;
+      color: var(--muted);
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
     }
-    .service-list li::before { content: "→ "; color: var(--gold); }
+    .service-list li::before {
+      content: '→';
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
 
-    /* ── ABOUT ── */
+    /* ─────────────────────────────
+       HOW I WORK
+    ───────────────────────────── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      margin-top: 3.5rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .step:hover { box-shadow: 0 8px 24px rgba(10,36,99,0.08); }
+
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.83rem;
+      color: var(--body);
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────
+       ABOUT
+    ───────────────────────────── */
     #about {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    .about-text .section-title { margin-bottom: 1.4rem; }
-
     .about-body {
-      font-size: 0.95rem;
-      color: var(--muted);
+      font-size: 0.96rem;
+      color: var(--body);
       line-height: 1.85;
       margin-bottom: 1.2rem;
-      font-weight: 300;
     }
 
-    .about-credentials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.8rem;
-    }
-
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
     .badge {
-      display: inline-block;
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.9rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      border-radius: 2px;
+      background: var(--blue-light);
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.28rem 0.8rem;
+      border-radius: 20px;
     }
 
-    .about-visual {
+    .about-numbers {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
 
-    .about-block {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.8rem 1.4rem;
+    .a-num {
+      background: var(--blue-pale);
+      border: 1px solid var(--blue-light);
+      border-radius: 12px;
+      padding: 1.6rem 1.2rem;
       text-align: center;
+      transition: transform 0.2s;
     }
-
-    .about-block:first-child {
+    .a-num:hover { transform: translateY(-3px); }
+    .a-num:first-child {
       grid-column: 1 / -1;
-      background: var(--ink);
-      color: var(--white);
+      background: var(--navy);
     }
 
-    .about-block-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
-      font-weight: 600;
-      color: var(--gold);
+    .a-num-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--blue);
       line-height: 1;
     }
+    .a-num:first-child .a-num-val { color: var(--white); }
 
-    .about-block-label {
-      font-size: 0.8rem;
+    .a-num-label {
+      font-size: 0.79rem;
       color: var(--muted);
-      margin-top: 0.4rem;
+      margin-top: 0.45rem;
       line-height: 1.4;
     }
+    .a-num:first-child .a-num-label { color: rgba(255,255,255,0.55); }
 
-    .about-block:first-child .about-block-label { color: rgba(255,255,255,0.5); }
-
-    /* ── CASE STUDIES ── */
-    #work { background: var(--card); }
-
+    /* ─────────────────────────────
+       CASE STUDIES
+    ───────────────────────────── */
     .work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
+      gap: 1.4rem;
     }
 
     .work-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2.2rem;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.25s, box-shadow 0.25s;
     }
     .work-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 32px rgba(10,36,99,0.08);
     }
 
-    .work-company {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
+    .work-co {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 0.6rem;
+      color: var(--blue);
+      margin-bottom: 0.55rem;
     }
 
     .work-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
       line-height: 1.3;
     }
 
     .work-desc {
-      font-size: 0.86rem;
-      color: var(--muted);
+      font-size: 0.85rem;
+      color: var(--body);
       line-height: 1.75;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
+      flex: 1;
     }
 
     .work-result {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
       font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .work-result::before {
-      content: '';
-      display: inline-block;
-      width: 20px; height: 2px;
-      background: var(--gold);
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--blue-light);
+      padding: 0.48rem 0.85rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--blue);
     }
 
-    /* ── CONTACT ── */
+    /* ─────────────────────────────
+       CONTACT
+    ───────────────────────────── */
     #contact {
+      background: var(--navy);
       text-align: center;
-      background: var(--ink);
-      color: var(--white);
+      padding: 90px 6%;
     }
 
-    #contact .section-title { color: var(--white); }
-    #contact .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 2.5rem; }
-    #contact .section-eyebrow { color: var(--gold-light); }
+    #contact .eyebrow {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.7);
+    }
 
-    .contact-grid {
+    #contact .section-heading { color: var(--white); }
+    #contact .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 2.8rem; }
+
+    .contact-row {
       display: flex;
       justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
+      gap: 1rem;
     }
 
-    .contact-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 1.2rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.88rem;
-      transition: background 0.2s, color 0.2s;
-      display: flex;
+    .c-link {
+      display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
+      padding: 0.95rem 1.7rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.87rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.8);
+      transition: background 0.2s, color 0.2s, transform 0.15s, border-color 0.2s;
     }
-    .contact-item:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .c-link:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
 
-    /* ── FOOTER ── */
+    .c-link.primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(29,78,216,0.4);
+    }
+    .c-link.primary:hover {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--navy);
+    }
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
     footer {
-      background: #080808;
-      color: rgba(255,255,255,0.3);
+      background: #050d1e;
+      color: rgba(255,255,255,0.28);
       text-align: center;
-      padding: 1.5rem 4rem;
+      padding: 1.4rem 6%;
       font-size: 0.78rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* ─────────────────────────────
+       RESPONSIVE
+    ───────────────────────────── */
+    @media (max-width: 1024px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .work-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2.5rem; }
-      section { padding: 4rem 1.5rem; }
-      .logos { padding: 1.5rem; }
-      .logos-grid { gap: 1.5rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
-      .work-grid { grid-template-columns: 1fr; }
-      .about-visual { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-menu li:not(:last-child) { display: none; }
+      #home { grid-template-columns: 1fr; padding: 100px 4% 60px; gap: 2.5rem; }
+      .hero-title { font-size: 2.2rem; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .section { padding: 60px 4%; }
+      .logos { padding: 1.6rem 4%; }
+      .logos-row { gap: 1.6rem; }
+    }
+
+    @media (max-width: 560px) {
+      .why-grid, .services-grid, .process-steps, .work-grid { grid-template-columns: 1fr; }
+      .btn-row { flex-direction: column; }
+      .contact-row { flex-direction: column; align-items: stretch; }
+      .c-link { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ══ NAV ══ -->
   <nav>
-    <a href="#" class="nav-logo">Leena Agarwal</a>
-    <ul class="nav-links">
+    <a href="#home" class="nav-logo">Leena <em>Agarwal</em></a>
+    <ul class="nav-menu">
+      <li><a href="#why">Why a TPM</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#how">How I Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+      <li><a href="#contact" class="nav-btn">Book a Call</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">TPM Consulting · San Francisco Bay Area</p>
-      <h1>Where <em>AI research</em> meets flawless execution</h1>
+  <!-- ══ HERO ══ -->
+  <section id="home">
+    <div>
+      <div class="pill">🌉 TPM Consulting · San Francisco Bay Area</div>
+      <h1 class="hero-title">Where <em>AI research</em> meets<br>flawless execution</h1>
       <p class="hero-sub">
-        Senior Technical Program Manager with 18+ years helping AI/ML teams turn ambiguous research roadmaps into shipped products — from training data pipelines and MLOps infrastructure to go/no-go launches under regulatory constraints.
+        Senior Technical Program Manager with 18+ years helping AI/ML teams turn ambiguous research roadmaps into shipped products — from human data pipelines and MLOps infrastructure to go/no-go launches under regulatory constraints.
       </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Book a Free 15-Min Call</a>
-        <a href="#work" class="btn-secondary">See My Work</a>
+      <div class="btn-row">
+        <a href="https://calendly.com/lagarwal1/15min" target="_blank" class="btn-solid">📅 Book a Free 15-Min Call</a>
+        <a href="#work" class="btn-outline">See My Work</a>
       </div>
     </div>
-    <div class="hero-right">
+    <div class="hero-cards">
       <div class="stat-card">
         <div class="stat-num">18+</div>
-        <div class="stat-label">
+        <div class="stat-text">
           <strong>Years of Experience</strong>
-          Across AI/ML, cloud infra, and autonomous systems
+          <span>AI/ML, cloud infrastructure, and autonomous systems</span>
         </div>
       </div>
       <div class="stat-card">
         <div class="stat-num">$10M+</div>
-        <div class="stat-label">
+        <div class="stat-text">
           <strong>Budget Ownership</strong>
-          End-to-end program delivery at enterprise scale
+          <span>End-to-end enterprise program delivery</span>
         </div>
       </div>
       <div class="stat-card">
         <div class="stat-num">50+</div>
-        <div class="stat-label">
+        <div class="stat-text">
           <strong>Engineers Led</strong>
-          Cross-functional teams across research, infra & product
+          <span>Cross-functional teams across research, infrastructure, and product</span>
         </div>
       </div>
       <div class="stat-card">
         <div class="stat-num">0</div>
-        <div class="stat-label">
+        <div class="stat-text">
           <strong>Critical Production Incidents</strong>
-          Under live-traffic and regulatory oversight at Cruise
+          <span>Under live-traffic and NHTSA regulatory oversight at Cruise</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LOGOS -->
+  <!-- ══ LOGOS ══ -->
   <div class="logos">
-    <p class="logos-label">Previously at</p>
-    <div class="logos-grid">
-      <span class="logo-item">Amazon</span>
-      <span class="logo-item">Meta</span>
-      <span class="logo-item">Cruise · GM</span>
-      <span class="logo-item">Block</span>
-      <span class="logo-item">Woven · Toyota</span>
-      <span class="logo-item">Intel</span>
+    <p class="logos-eyebrow">Previously at</p>
+    <div class="logos-row">
+      <span class="logo-name">Amazon</span>
+      <span class="logo-name">Meta</span>
+      <span class="logo-name">Cruise · GM</span>
+      <span class="logo-name">Block</span>
+      <span class="logo-name">Woven · Toyota</span>
+      <span class="logo-name">Intel</span>
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="reveal">
-      <p class="section-eyebrow">What I Do</p>
-      <h2 class="section-title">Consulting Services</h2>
+  <!-- ══ WHY HIRE A TPM CONSULTANT ══ -->
+  <section id="why" class="section section-alt">
+    <div class="section-intro">
+      <div class="eyebrow">Why a TPM Consultant</div>
+      <h2 class="section-heading">What companies look for — and what I deliver</h2>
+      <p class="section-sub">Research shows that the highest-performing AI/ML teams hire TPM consultants for six core reasons. Here is how I address every one of them.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🧭</span>
+        <h3 class="why-title">Technical Depth + Program Leadership</h3>
+        <p class="why-desc">Companies need TPMs who can evaluate architecture tradeoffs, navigate system design decisions, and lead engineering teams — not just coordinate. With an M.S. in Computer Science and 8 years as an engineering lead, I bring both.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🔗</span>
+        <h3 class="why-title">Cross-Functional Stakeholder Alignment</h3>
+        <p class="why-desc">The #1 reason programs fail is misalignment between research, engineering, product, and vendors. I build the operating mechanisms — exec reviews, dependency tracking, OKRs — that keep every stakeholder moving in the same direction.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚠️</span>
+        <h3 class="why-title">Risk Management and Go/No-Go Decisions</h3>
+        <p class="why-desc">Companies hiring TPM consultants need someone who can own risk: identify it early, communicate it clearly, and make go/no-go calls with conviction. I have done this under NHTSA regulatory oversight, automotive safety constraints, and live-traffic deployments.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📊</span>
+        <h3 class="why-title">Data-Driven Execution and OKR Ownership</h3>
+        <p class="why-desc">Strong TPM consultants do not just deliver projects — they own outcomes. I define success metrics, build dashboards to track them, run A/B testing programs, and connect every sprint to measurable business results.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤝</span>
+        <h3 class="why-title">Vendor and Partner Management</h3>
+        <p class="why-desc">AI/ML programs increasingly depend on external data vendors, AI trainers, and cloud partners. I have managed multi-million dollar vendor relationships, negotiated SLAs, and built quality assurance frameworks for external pipelines at scale.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <h3 class="why-title">Speed to Impact Without a Full-Time Hire</h3>
+        <p class="why-desc">Companies turn to TPM consultants when they need senior leadership immediately — without a six-month hiring cycle. I embed quickly, learn your stack and team dynamics fast, and start delivering value in the first two weeks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services" class="section">
+    <div class="section-intro">
+      <div class="eyebrow">What I Do</div>
+      <h2 class="section-heading">Consulting Services</h2>
       <p class="section-sub">Embedded or advisory engagements for AI/ML teams that need senior program leadership — without the full-time hire.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid">
       <div class="service-card">
-        <span class="service-icon">🗄️</span>
+        <div class="service-icon-box">🗄️</div>
         <h3 class="service-title">AI Training Data Programs</h3>
         <p class="service-desc">End-to-end program management for human data and AI training data pipelines — from campaign design to vendor execution and quality measurement.</p>
         <ul class="service-list">
           <li>Data collection campaign design</li>
-          <li>External vendor & AI trainer management</li>
-          <li>Quality frameworks & dashboards</li>
+          <li>External vendor and AI trainer management</li>
+          <li>Quality frameworks and dashboards</li>
           <li>Research–engineering interface</li>
         </ul>
       </div>
       <div class="service-card">
-        <span class="service-icon">⚙️</span>
-        <h3 class="service-title">MLOps & Infrastructure Programs</h3>
-        <p class="service-desc">Drive ML infrastructure modernization, GPU compute platforms, and cloud migrations with rigorous cross-org dependency management.</p>
+        <div class="service-icon-box">⚙️</div>
+        <h3 class="service-title">MLOps and Infrastructure Programs</h3>
+        <p class="service-desc">Drive ML infrastructure modernization, GPU compute platforms, and cloud migrations with rigorous cross-functional dependency management.</p>
         <ul class="service-list">
           <li>MLOps platform program management</li>
-          <li>GPU optimization & training pipelines</li>
+          <li>GPU optimization and training pipelines</li>
           <li>Cloud migration (AWS, GCP, Azure)</li>
-          <li>CI/CD & DevOps automation</li>
+          <li>CI/CD and DevOps automation</li>
         </ul>
       </div>
       <div class="service-card">
-        <span class="service-icon">🚀</span>
-        <h3 class="service-title">Launch Readiness & Go/No-Go</h3>
+        <div class="service-icon-box">🚀</div>
+        <h3 class="service-title">Launch Readiness and Go/No-Go</h3>
         <p class="service-desc">Build the operating mechanisms, risk frameworks, and executive alignment needed to ship safely — especially under safety, regulatory, or compliance constraints.</p>
         <ul class="service-list">
           <li>Go/no-go decision frameworks</li>
-          <li>Risk & dependency management</li>
+          <li>Risk and dependency management</li>
           <li>Executive stakeholder alignment</li>
-          <li>Incident & post-mortem programs</li>
+          <li>Incident and post-mortem programs</li>
         </ul>
       </div>
       <div class="service-card">
-        <span class="service-icon">🤖</span>
-        <h3 class="service-title">Generative AI & LLM Programs</h3>
+        <div class="service-icon-box">🤖</div>
+        <h3 class="service-title">Generative AI and LLM Programs</h3>
         <p class="service-desc">Program leadership for GenAI and LLM product delivery — from model evaluation frameworks to production rollout and responsible AI governance.</p>
         <ul class="service-list">
           <li>GenAI product program management</li>
-          <li>LLM evaluation & A/B testing</li>
+          <li>LLM evaluation and A/B testing</li>
           <li>Responsible AI frameworks</li>
           <li>Research-to-product pipeline</li>
         </ul>
       </div>
       <div class="service-card">
-        <span class="service-icon">📋</span>
-        <h3 class="service-title">Agile Transformation & Coaching</h3>
-        <p class="service-desc">Implement Agile, Scrum, and SAFe execution models that actually work for AI/ML teams — not just software engineering teams.</p>
+        <div class="service-icon-box">📋</div>
+        <h3 class="service-title">Agile Transformation and Coaching</h3>
+        <p class="service-desc">Implement Agile, Scrum, and SAFe execution models that work for AI/ML teams — bridging the gap between research cadences and engineering sprints.</p>
         <ul class="service-list">
-          <li>SAFe & Scrum implementation</li>
-          <li>OKR & KPI framework design</li>
-          <li>Sprint cadence & backlog coaching</li>
+          <li>SAFe and Scrum implementation</li>
+          <li>OKR and KPI framework design</li>
+          <li>Sprint cadence and backlog coaching</li>
           <li>Cross-org alignment playbooks</li>
         </ul>
       </div>
       <div class="service-card">
-        <span class="service-icon">🏢</span>
+        <div class="service-icon-box">🏢</div>
         <h3 class="service-title">Fractional TPM Leadership</h3>
         <p class="service-desc">Embedded as a fractional Senior TPM for early-stage or scaling AI teams that need senior program ownership without a full-time headcount.</p>
         <ul class="service-list">
           <li>Part-time embedded leadership</li>
           <li>Program governance setup</li>
-          <li>Team & process mentorship</li>
+          <li>Team and process mentorship</li>
           <li>Flexible engagement models</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about-text reveal">
-      <p class="section-eyebrow">About</p>
-      <h2 class="section-title">The TPM who speaks both research and engineering</h2>
+  <!-- ══ HOW I WORK ══ -->
+  <section id="how" class="section section-surface">
+    <div class="section-intro">
+      <div class="eyebrow">My Process</div>
+      <h2 class="section-heading">How I work with your team</h2>
+      <p class="section-sub">A structured, four-step engagement model designed to deliver impact from day one — whether you need a two-week sprint or a six-month embedded partnership.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Discovery and Diagnosis</h3>
+        <p class="step-desc">I spend the first week embedding with your team, mapping the program landscape, identifying blockers, and diagnosing the root causes of execution gaps.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Operating Model Design</h3>
+        <p class="step-desc">I design the governance structures, dependency tracking frameworks, OKRs, and escalation paths your program needs — tailored to your team size, stack, and velocity.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Embedded Execution</h3>
+        <p class="step-desc">I run the program alongside your team — owning cross-functional alignment, unblocking engineering, managing vendors, and driving toward clear milestones and launch criteria.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3 class="step-title">Handoff and Knowledge Transfer</h3>
+        <p class="step-desc">Every engagement ends with documented playbooks, trained team members, and dashboards your team can own — so the value outlasts the engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about" class="section section-alt" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; padding:88px 6%;">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2 class="section-heading">The TPM who speaks both research and engineering</h2>
       <p class="about-body">
-        I've spent 18 years at the intersection of ambitious AI research and the hard realities of engineering execution. From shipping Portal TV at Meta to managing ML infrastructure at Block to driving safety-critical AI launches at Cruise and Woven by Toyota — I've built the muscle for making complex programs actually land.
+        I have spent 18 years at the intersection of ambitious AI research and the hard realities of engineering execution. From shipping Portal TV at Meta to managing ML infrastructure at Block to driving safety-critical AI launches at Cruise and Woven by Toyota — I have built the muscle for making complex programs actually land.
       </p>
       <p class="about-body">
         My specialty is the messy middle: when a research team has a roadmap, an engineering team has constraints, and external vendors have their own priorities. I build the operating mechanisms, quality frameworks, and alignment structures that turn that chaos into shipped products.
@@ -697,7 +884,7 @@
       <p class="about-body">
         Based in the San Francisco Bay Area. Open to remote, hybrid, or on-site engagements.
       </p>
-      <div class="about-credentials">
+      <div class="badges">
         <span class="badge">PMP Certified</span>
         <span class="badge">SAFe Master (SMC)</span>
         <span class="badge">M.S. Computer Science</span>
@@ -706,103 +893,104 @@
         <span class="badge">Toastmasters President</span>
       </div>
     </div>
-    <div class="about-visual reveal">
-      <div class="about-block">
-        <div class="about-block-num">18+</div>
-        <div class="about-block-label">Years driving AI/ML and infrastructure programs at scale</div>
+    <div class="about-numbers">
+      <div class="a-num">
+        <div class="a-num-val">18+</div>
+        <div class="a-num-label">Years driving AI/ML and infrastructure programs at scale</div>
       </div>
-      <div class="about-block">
-        <div class="about-block-num">25%</div>
-        <div class="about-block-label">Diagnostic accuracy improvement at Woven by Toyota</div>
+      <div class="a-num">
+        <div class="a-num-val">25%</div>
+        <div class="a-num-label">Diagnostic accuracy improvement at Woven by Toyota</div>
       </div>
-      <div class="about-block">
-        <div class="about-block-num">$2M</div>
-        <div class="about-block-label">Annual infra cost savings at Block</div>
+      <div class="a-num">
+        <div class="a-num-val">$2M</div>
+        <div class="a-num-label">Annual infrastructure cost savings at Block</div>
       </div>
-      <div class="about-block">
-        <div class="about-block-num">40%</div>
-        <div class="about-block-label">Fleet reliability improvement at Cruise</div>
+      <div class="a-num">
+        <div class="a-num-val">40%</div>
+        <div class="a-num-label">Fleet reliability improvement at Cruise</div>
       </div>
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <div class="reveal">
-      <p class="section-eyebrow">Selected Work</p>
-      <h2 class="section-title">Case Studies</h2>
+  <!-- ══ CASE STUDIES ══ -->
+  <section id="work" class="section">
+    <div class="section-intro">
+      <div class="eyebrow">Selected Work</div>
+      <h2 class="section-heading">Case Studies</h2>
       <p class="section-sub">A sample of programs delivered across AI/ML, cloud infrastructure, and autonomous systems.</p>
     </div>
-    <div class="work-grid reveal">
+    <div class="work-grid">
       <div class="work-card">
-        <p class="work-company">Woven by Toyota</p>
+        <p class="work-co">Woven by Toyota</p>
         <h3 class="work-title">AI Assistant Platform for Vehicle Telemetry</h3>
-        <p class="work-desc">Owned go/no-go decision making for an AI assistant that fused vehicle telemetry with cloud ML inference (TensorFlow, AWS SageMaker) across 8 cross-functional teams and 60+ engineers.</p>
+        <p class="work-desc">Owned go/no-go decision making for an AI assistant that integrated vehicle telemetry with cloud ML inference (TensorFlow, AWS SageMaker) across 8 cross-functional teams and 60+ engineers. Built quality measurement frameworks and launch readiness criteria under automotive safety constraints.</p>
         <p class="work-result">25% improvement in diagnostic accuracy across 15+ vehicle models</p>
       </div>
       <div class="work-card">
-        <p class="work-company">Block · formerly Square</p>
-        <h3 class="work-title">MLOps & Cloud Infrastructure Migration</h3>
-        <p class="work-desc">Program-managed migration of 1,000+ services to cloud-native microservices on AWS/GCP, alongside GPU compute platform modernization serving 5 ML teams and 40+ engineers.</p>
+        <p class="work-co">Block · formerly Square</p>
+        <h3 class="work-title">MLOps and Cloud Infrastructure Migration</h3>
+        <p class="work-desc">Program-managed the migration of 1,000+ services to cloud-native microservices on AWS and GCP, alongside GPU compute platform modernization serving 5 ML teams and 40+ engineers. Built data pipelines and quality dashboards using SQL and Python tooling.</p>
         <p class="work-result">$2M cost reduction · 99.2% availability · 30% GPU utilization gain</p>
       </div>
       <div class="work-card">
-        <p class="work-company">Cruise · GM</p>
+        <p class="work-co">Cruise · GM</p>
         <h3 class="work-title">Autonomous Vehicle AI Launch Program</h3>
-        <p class="work-desc">Led cross-system delivery spanning perception AI, sensing hardware, and fleet operations under NHTSA regulatory oversight. Built scenario coverage and rollout gating mechanisms for live-traffic deployments.</p>
+        <p class="work-desc">Led cross-system delivery spanning perception AI, sensing hardware, and fleet operations under NHTSA regulatory oversight. Built scenario coverage, defect triage, and rollout gating mechanisms for live-traffic deployments.</p>
         <p class="work-result">Zero critical production incidents · 40% fleet reliability improvement</p>
       </div>
       <div class="work-card">
-        <p class="work-company">Meta</p>
+        <p class="work-co">Meta</p>
         <h3 class="work-title">Portal TV Zero-to-One Delivery</h3>
-        <p class="work-desc">Led $12M zero-to-one program across 40+ engineers spanning hardware, software, and AI features (computer vision, NLP, PyTorch). Acted as key interface between research roadmap and AI trainer programs.</p>
+        <p class="work-desc">Led a $12M zero-to-one program across 40+ engineers spanning hardware, software, and AI features (computer vision, NLP, PyTorch). Served as the key interface between the research roadmap and AI trainer programs, driving data collection campaigns and quality validation at global scale.</p>
         <p class="work-result">22% user engagement lift · 30% reduction in support escalations</p>
       </div>
       <div class="work-card">
-        <p class="work-company">Amazon</p>
-        <h3 class="work-title">CI/CD & Cloud Service Automation</h3>
-        <p class="work-desc">Owned CI/CD pipelines and DevOps automation for large-scale cloud services on AWS (EC2, S3, Lambda), managing a team of 12 engineers across 3 time zones.</p>
+        <p class="work-co">Amazon</p>
+        <h3 class="work-title">CI/CD and Cloud Service Automation</h3>
+        <p class="work-desc">Owned CI/CD pipelines and DevOps automation for large-scale cloud services on AWS (EC2, S3, Lambda), managing a team of 12 engineers across 3 time zones with a focus on operational excellence and reliability.</p>
         <p class="work-result">25% faster deployments · 99.9% service reliability</p>
       </div>
       <div class="work-card">
-        <p class="work-company">Intel · Isilon</p>
-        <h3 class="work-title">Distributed Systems & Automation Frameworks</h3>
-        <p class="work-desc">Built automation frameworks, CI/CD pipelines, and scalable architectures for high-availability distributed systems across 8 years of engineering leadership.</p>
-        <p class="work-result">Enterprise-grade HA distributed systems · ASIC/FPGA validation</p>
+        <p class="work-co">Intel · Isilon</p>
+        <h3 class="work-title">Distributed Systems and Automation Frameworks</h3>
+        <p class="work-desc">Built automation frameworks, CI/CD pipelines, and scalable architectures for high-availability distributed systems across 8 years of engineering leadership, including ASIC/FPGA-based validation hardware for post-silicon system validation.</p>
+        <p class="work-result">Enterprise-grade high-availability distributed systems</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ══ CONTACT ══ -->
   <section id="contact">
-    <div class="reveal">
-      <p class="section-eyebrow">Get In Touch</p>
-      <h2 class="section-title">Let's work together</h2>
-      <p class="section-sub">Whether you need embedded TPM leadership, a specific program rescued, or an advisory session — I'd love to hear what you're working on.</p>
-      <div class="contact-grid">
-        <a href="/cdn-cgi/l/email-protection#f69a9791978481979ac7b6919b979f9ad895999b" class="contact-item">
-          ✉️ <span class="__cf_email__" data-cfemail="274b4640465550464b1667404a464e4b0944484a">[email&#160;protected]</span>
-        </a>
-        <a href="https://linkedin.com/in/leenaagarwal" target="_blank" class="contact-item">
-          💼 linkedin.com/in/leenaagarwal
-        </a>
-        <a href="tel:6576584018" class="contact-item">
-          📞 657-658-4018
-        </a>
-        <a href="https://calendly.com/lagarwal1/15min" target="_blank" class="contact-item">
-          📅 Book a Free 15-Min Call
-        </a>
-      </div>
+    <div class="eyebrow">Get in Touch</div>
+    <h2 class="section-heading">Let's work together</h2>
+    <p class="section-sub">Whether you need embedded TPM leadership, a program rescued, or a quick advisory session — I would love to hear what you are working on.</p>
+    <div class="contact-row">
+      <a href="https://calendly.com/lagarwal1/15min" target="_blank" class="c-link primary">📅 Book a Free 15-Min Call</a>
+      <a href="mailto:lagarwal1@gmail.com" class="c-link">✉️ lagarwal1@gmail.com</a>
+      <a href="https://www.linkedin.com/in/leenaagarwal/" target="_blank" class="c-link">💼 LinkedIn Profile</a>
+      <a href="tel:6576584018" class="c-link">📞 657-658-4018</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer>
-    <p>© 2026 Leena Agarwal · TPM Consulting · San Francisco Bay Area · PMP · SMC</p>
+    <p>© 2026 Leena Agarwal · Senior TPM Consulting · San Francisco Bay Area · PMP Certified · SAFe Master (SMC)</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) 
+  <script>
+    // Smooth scroll for all internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var id = this.getAttribute('href');
+        var target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
